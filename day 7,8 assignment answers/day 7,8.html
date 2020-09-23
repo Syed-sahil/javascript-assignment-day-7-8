@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Day</title>
+    <style>
+        * {
+          margin: 0px;
+          padding: 0px;
+        }
+  
+        .header {
+          height: 70px;
+          width: 100%;
+          background-color: rgba(103 228 220 / 55%);
+          line-height: 70px;
+        }
+  
+        h1 {
+          margin-left: 5%;
+          display: inline-block;
+          width: 30%;
+          vertical-align: top;
+        }
+  
+        .search {
+          height: 70px;
+          width: 60%;
+          /* background-color: red; */
+          display: inline-block;
+        }
+  
+        .search input {
+          height: 40px;
+          width: 100%;
+          text-indent: 20px;
+          border-radius: 5px;
+          border: 1px solid gray;
+          outline: none;
+        }
+  
+        .products {
+          width: 100%;
+          height: auto;
+          /* background-color: gray; */
+        }
+  
+        .productwrapper {
+          height: auto;
+          width: 80%;
+          /* background-color: green; */
+          margin-left: 10%;
+          margin-bottom: 50px;
+        }
+  
+        .product {
+          height: auto;
+          width: 25%;
+          /* background-color: red; */
+          display: inline-block;
+          margin-top: 25px;
+          margin-left: 6.25%;
+          border: 1px solid rgb(136, 93, 145);
+        }
+        body{
+          background-color: rgb(255 252 220 / 81%);
+        }
+  
+        .prodimg {
+          height: 260px;
+          width: 100%;
+          /* background-color: yellow; */
+          overflow: hidden;
+        }
+  
+        .product h3,
+        .product p {
+          padding: 5px;
+          padding-left: 10px;
+        }
+  
+        .product p {
+          color: rgb(0, 0, 0);
+        }
+        button {
+          padding: 10px;
+        }
+        #filter{
+          width: 40%;
+          display: block;
+        }
+        #addtocart{
+          margin-top: 40px;
+          margin-bottom: 20px;
+          margin-left: 40px;
+          width: 80px;
+          height: 50px;
+          padding-top: 5px;
+          font-size: medium;
+          text-align:center;
+          display: block;
+        }
+        #hidecart{
+          margin-left: 40px;
+          width: 80px;
+          height: 50px;
+          padding-top: 5px;
+          font-size: medium;
+          text-align:center;
+          display: inline;
+        }
+        .mycart{
+          width: 60%;
+          height: auto;
+          display: none;
+          background-color: #cad6ce;
+          margin-left: 20%;
+          position:relative;
+          padding-bottom: 27px;
+        }
+        .close{
+            margin-top: 5px;
+            margin-left: 92%;
+        }
+        .range{
+          margin-top: 20px;
+          height: 40px;
+          margin-left: 40px;
+          text-align: center;
+        }
+        #filterbyamt{
+          margin-top: 50px;
+          margin-left: 40px;
+        }
+        h2{
+          display: inline;
+        }
+        #productincart{
+          margin-left: 40px;
+          text-align: center;
+        }
+        #counter{
+          margin-left: 10px;
+          display: block;
+        }
+        #numberincart{
+          /* background-color: coral; */
+          text-align: center;
+        }
+      </style>
+</head>
+<body>
+    <div class="header">
+      <h1>Shopping 365</h1>
+      <div class="search">
+        <input
+          type="search"
+          onkeyup="searchProduct(this.value)"
+          placeholder="Search For Products"
+        />
+        
+      </div>
+    </div>
+    <div class="filter">
+
+      <h3 id="filterbyamt">Filter By Amount</h3>
+
+      <input type="number" name="Minimum Amount" placeholder="Minimum Price" class="range" id="minamt">
+      <input type="number" name="Maximum Amount" placeholder="Maximum Price" class="range" id="maxamt">
+      <button class="range" id="filterbutton" onclick="filter()">Filter By Price</button>
+
+    </div><br><br>
+    
+    <h2 id="productincart">No. of Profucts in Cart : </h2><h2 id="cartItem">0</h2>
+    
+    <button onclick="showmycart()" id="addtocart">Show Cart</button>
+    <button onclick="hidecart()" id="hidecart">Close Cart</button>
+    
+    <div class="mycart" id="cart">
+    
+      <div id="numberincart">
+        <h3>you have no products in your cart</h3></div>
+    </div>
+   
+    <div class="products">
+      <div class="productwrapper" id="productwrapper"></div>
+    </div>
+   
+    <div class="products">
+      <div class="productwrapper"></div>
+    </div>
+   
+    <script src="day 7,8.js"></script>
+</body>
+</html>
